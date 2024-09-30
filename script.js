@@ -27,32 +27,20 @@ function getHumanChoice() {
 }
 
 function playGame() {
-  function playRound(human, computer) {
-    console.log(human, computer);
-    if (
-      (human === "Rock" && computer === "Rock") ||
-      (human === "Paper" && computer === "Paper") ||
-      (human === "Scissors" && computer === "Scissors")
-    ) {
+  function playRound(humanChoice, computerChoice) {
+    console.log(humanChoice, computerChoice);
+
+    if (humanChoice === computerChoice) {
       console.log("Game is Draw");
-    } else if (
-      (human === "Rock" && computer === "Scissors") ||
-      (human === "Paper" && computer === "Rock") ||
-      (human === "Scissors" && computer === "Paper")
-    ) {
+    } else if (winMap[humanChoice] === computerChoice) {
       humanScore++;
-      console.log(`You win ${human} beats ${computer}`);
-    } else if (
-      (computer === "Rock" && human === "Scissors") ||
-      (computer === "Paper" && human === "Rock") ||
-      (computer === "Scissors" && human === "Paper")
-    ) {
-      computerScore++;
-      console.log(`You lose ${computer} wins ${human}`);
+      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
     } else {
-      console.log("Wrong Choice");
+      computerScore++;
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
     }
   }
+
   let humanSelection;
   let computerSelection;
   for (let i = 0; i < 5; i++) {
