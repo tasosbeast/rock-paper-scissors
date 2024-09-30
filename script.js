@@ -6,8 +6,17 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanPrompt = prompt("Rock, Paper or Scissors?");
-  return humanPrompt[0].toUpperCase() + humanPrompt.slice(1).toLowerCase();
+  while (true) {
+    let humanPrompt = prompt("Rock, Paper or Scissors?").trim();
+    const formattedChoice =
+      humanPrompt[0].toUpperCase() + humanPrompt.slice(1).toLowerCase();
+
+    if (choices.includes(formattedChoice)) {
+      return formattedChoice;
+    } else {
+      alert("Invalid Choice, Please enter Rock, Paper or Scissors");
+    }
+  }
 }
 
 function playGame() {
