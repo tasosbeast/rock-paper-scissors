@@ -1,4 +1,6 @@
 const choices = ["Rock", "Paper", "Scissors"];
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3);
@@ -20,8 +22,6 @@ function getHumanChoice() {
 }
 
 function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
   function playRound(human, computer) {
     console.log(human, computer);
     if (
