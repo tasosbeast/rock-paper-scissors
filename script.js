@@ -1,3 +1,8 @@
+const winMap = {
+  Rock: "Scissors",
+  Paper: "Rock",
+  Scissors: "Paper",
+};
 const choices = ["Rock", "Paper", "Scissors"];
 let humanScore = 0;
 let computerScore = 0;
