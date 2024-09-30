@@ -47,13 +47,15 @@ function playGame() {
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
+    alert(`Computer choose: ${computerSelection}
+ Human: ${humanScore} Computer: ${computerScore}`);
   }
   if (humanScore > computerScore) {
-    console.log("Human win the Game");
+    alert("Human win the Game");
   } else if (computerScore > humanScore) {
-    console.log("Computer win the Game");
+    alert("Computer win the Game");
   } else {
-    console.log("Game is Draw");
+    alert("Game is Draw");
   }
 }
 
