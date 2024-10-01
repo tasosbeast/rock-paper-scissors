@@ -41,12 +41,13 @@ function playGame() {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-    alert(`Computer choose: ${computerSelection}
- Human: ${humanScore} Computer: ${computerScore}`);
+    alert(
+      `Computer choose: ${computerSelection}\nHuman: ${gameState.human} Computer: ${gameState.computer}`
+    );
   }
-  if (humanScore > computerScore) {
+  if (gameState.human > gameState.computer) {
     alert("Human win the Game");
-  } else if (computerScore > humanScore) {
+  } else if (gameState.computer > gameState.human) {
     alert("Computer win the Game");
   } else {
     alert("Game is Draw");
