@@ -14,14 +14,10 @@ const getHumanChoice = () => {
     const humanPrompt = prompt("Rock, Paper or Scissors?").trim();
     const formattedChoice =
       humanPrompt[0].toUpperCase() + humanPrompt.slice(1).toLowerCase();
-
-    if (choices.includes(formattedChoice)) {
-      return formattedChoice;
-    } else {
-      alert("Invalid Choice, Please enter Rock, Paper or Scissors");
-    }
-  }
-}
+    if (choices.includes(formattedChoice)) return formattedChoice;
+    alert("Invalid Choice, Please enter Rock, Paper or Scissors");
+  } while (true);
+};
 
 function playGame() {
   function playRound(humanChoice, computerChoice) {
