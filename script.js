@@ -36,8 +36,9 @@ const playRound = (humanChoice, computerChoice) => {
   }
 };
 
+const ROUNDS_PER_GAME = 5;
 function playGame() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < ROUNDS_PER_GAME; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
