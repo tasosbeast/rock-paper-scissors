@@ -34,6 +34,7 @@ const playRound = (humanChoice, computerChoice) => {
     gameState.computer++;
     console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
   }
+};
 
   let humanSelection;
   let computerSelection;
