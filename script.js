@@ -6,14 +6,12 @@ const winMap = {
 const choices = Object.keys(winMap);
 const gameState = { human: 0, computer: 0 };
 
-function getComputerChoice() {
-  let randomNumber = Math.floor(Math.random() * 3);
-  return choices[randomNumber];
-}
+const getComputerChoice = () =>
+  choices[Math.floor(Math.random() * choices.length)];
 
-function getHumanChoice() {
-  while (true) {
-    let humanPrompt = prompt("Rock, Paper or Scissors?").trim();
+const getHumanChoice = () => {
+  do {
+    const humanPrompt = prompt("Rock, Paper or Scissors?").trim();
     const formattedChoice =
       humanPrompt[0].toUpperCase() + humanPrompt.slice(1).toLowerCase();
 
