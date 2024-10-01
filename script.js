@@ -4,8 +4,7 @@ const winMap = {
   Scissors: "Paper",
 };
 const choices = Object.keys(winMap);
-let humanScore = 0;
-let computerScore = 0;
+const gameState = { human: 0, computer: 0 };
 
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3);
