@@ -1,3 +1,7 @@
+/**
+ * Implements a simple Rock-Paper-Scissors game where the user plays against the computer.
+ * The game is played over 5 rounds, with the winner determined by the total score.
+ */
 const winMap = {
   Rock: "Scissors",
   Paper: "Rock",
@@ -19,19 +23,16 @@ const getHumanChoice = () => {
   } while (true);
 };
 
-function playGame() {
-  function playRound(humanChoice, computerChoice) {
-    console.log(humanChoice, computerChoice);
-
-    if (humanChoice === computerChoice) {
-      console.log("Game is Draw");
-    } else if (winMap[humanChoice] === computerChoice) {
-      humanScore++;
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    } else {
-      computerScore++;
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-    }
+const playRound = (humanChoice, computerChoice) => {
+  console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
+  if (humanChoice === computerChoice) {
+    console.log("Game is Draw");
+  } else if (winMap[humanChoice] === computerChoice) {
+    gameState.human++;
+    console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+  } else {
+    gameState.computer++;
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
   }
 
   let humanSelection;
