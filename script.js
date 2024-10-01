@@ -36,11 +36,10 @@ const playRound = (humanChoice, computerChoice) => {
   }
 };
 
-  let humanSelection;
-  let computerSelection;
+function playGame() {
   for (let i = 0; i < 5; i++) {
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
     alert(`Computer choose: ${computerSelection}
  Human: ${humanScore} Computer: ${computerScore}`);
