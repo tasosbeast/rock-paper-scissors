@@ -3,7 +3,7 @@ const winMap = {
   Paper: "Rock",
   Scissors: "Paper",
 };
-const choices = ["Rock", "Paper", "Scissors"];
+const choices = Object.keys(winMap);
 let humanScore = 0;
 let computerScore = 0;
 
