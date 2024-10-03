@@ -146,3 +146,95 @@ h6 {
   color: var(--dark-text);
   line-height: 1.1;
 }
+
+.game {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "paper scissors"
+    "rock rock";
+  place-items: center;
+  height: 30rem;
+  padding-top: 4rem;
+  gap: 2rem;
+  row-gap: 3rem;
+}
+
+.game::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 58%;
+  top: 65%;
+  background: url(images/bg-triangle.svg) no-repeat;
+  background-size: contain;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+.choice-btn {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.choice {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  background: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.choice::before {
+  content: "";
+  position: absolute;
+  left: -15%;
+  top: -15%;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.choice.paper::before {
+  background: linear-gradient(
+    to bottom,
+    var(--paper-gradient-1),
+    var(--paper-gradient-2)
+  );
+}
+
+.choice.scissors::before {
+  background: linear-gradient(
+    to bottom,
+    var(--scissors-gradient-1),
+    var(--scissors-gradient-2)
+  );
+}
+
+.choice.rock::before {
+  background: linear-gradient(
+    to bottom,
+    var(--rock-gradient-1),
+    var(--rock-gradient-2)
+  );
+}
+
+.choice-btn[data-choice="paper"] {
+  grid-area: paper;
+}
+
+.choice-btn[data-choice="scissors"] {
+  grid-area: scissors;
+}
+
+.choice-btn[data-choice="rock"] {
+  grid-area: rock;
+  transform: rotate(90deg);
+  margin-top: 2rem;
+}
