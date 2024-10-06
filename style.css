@@ -38,6 +38,8 @@
   --font-family: "Roboto", sans-serif;
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
+  --shadow-light: #00000026;
+  --shadow-medium: #0000004d;
 }
 
 *,
@@ -188,6 +190,7 @@ h6 {
   border-radius: 50%;
   display: grid;
   place-items: center;
+  box-shadow: inset 0 0.5rem var(--shadow-light);
 }
 
 .choice::before {
@@ -207,6 +210,7 @@ h6 {
     var(--paper-gradient-1),
     var(--paper-gradient-2)
   );
+  box-shadow: 0 0.5rem var(--shadow-medium), 0 0.5rem var(--paper-gradient-2);
 }
 
 .choice.scissors::before {
@@ -215,6 +219,7 @@ h6 {
     var(--scissors-gradient-1),
     var(--scissors-gradient-2)
   );
+  box-shadow: 0 0.5rem var(--shadow-medium), 0 0.5rem var(--scissors-gradient-2);
 }
 
 .choice.rock::before {
@@ -223,6 +228,7 @@ h6 {
     var(--rock-gradient-1),
     var(--rock-gradient-2)
   );
+  box-shadow: 0 0.5rem var(--shadow-medium), 0 0.5rem var(--rock-gradient-2);
 }
 
 .choice-btn[data-choice="paper"] {
@@ -235,6 +241,5 @@ h6 {
 
 .choice-btn[data-choice="rock"] {
   grid-area: rock;
-  transform: rotate(90deg);
   margin-top: 2rem;
 }
