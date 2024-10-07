@@ -65,4 +65,7 @@ function displayResults(results) {
       `;
     }, index * 1000);
   });
+
+  gameDiv.classList.toggle("hidden");
+  resultsDiv.classList.toggle("hidden");
 }
