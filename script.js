@@ -1,4 +1,18 @@
+// DOM elements
+const btnRules = document.querySelector(".rules-btn");
+const btnClose = document.querySelector(".close-btn");
+const modalRules = document.querySelector(".modal");
+
+// Show/hide modal
+btnRules.addEventListener("click", () =>
+  modalRules.classList.add("show-modal")
+);
+
+btnClose.addEventListener("click", () =>
+  modalRules.classList.remove("show-modal")
+);
 /**
+ *
  * Implements a simple Rock-Paper-Scissors game where the user plays against the computer.
  * The game is played over 5 rounds, with the winner determined by the total score.
  */
