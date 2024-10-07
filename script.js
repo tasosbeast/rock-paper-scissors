@@ -16,57 +16,53 @@ btnClose.addEventListener("click", () =>
  * Implements a simple Rock-Paper-Scissors game where the user plays against the computer.
  * The game is played over 5 rounds, with the winner determined by the total score.
  */
-const winMap = {
-  Rock: "Scissors",
-  Paper: "Rock",
-  Scissors: "Paper",
-};
-const choices = Object.keys(winMap);
-const gameState = { human: 0, computer: 0 };
+const CHOICES = [
+  {
+    name: "rock",
+    beats: "scissors",
+  },
+  {
+    name: "paper",
+    beats: "rock",
+  },
+  {
+    name: "scissors",
+    beats: "paper",
+  },
+];
+const choiceButtons = document.querySelectorAll(".choice-btn");
+const gameDiv = document.querySelector(".game");
+const resultsDiv = document.querySelector(".results");
+const resultDivs = document.querySelectorAll(".results__result");
 
-const getComputerChoice = () =>
-  choices[Math.floor(Math.random() * choices.length)];
+// game logic
 
-const getHumanChoice = () => {
-  do {
-    const humanPrompt = prompt("Rock, Paper or Scissors?").trim();
-    const formattedChoice =
-      humanPrompt[0].toUpperCase() + humanPrompt.slice(1).toLowerCase();
-    if (choices.includes(formattedChoice)) return formattedChoice;
-    alert("Invalid Choice, Please enter Rock, Paper or Scissors");
-  } while (true);
-};
+choiceButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const choiceName = button.dataset.choice;
+    const choice = CHOICES.find((choice) => choice.name === choiceName);
+    choose(choice);
+  });
+});
 
-const playRound = (humanChoice, computerChoice) => {
-  console.log(`Human: ${humanChoice}, Computer: ${computerChoice}`);
-  if (humanChoice === computerChoice) {
-    console.log("Game is Draw");
-  } else if (winMap[humanChoice] === computerChoice) {
-    gameState.human++;
-    console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-  } else {
-    gameState.computer++;
-    console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-  }
-};
-
-const ROUNDS_PER_GAME = 5;
-function playGame() {
-  for (let i = 0; i < ROUNDS_PER_GAME; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-    alert(
-      `Computer choose: ${computerSelection}\nHuman: ${gameState.human} Computer: ${gameState.computer}`
-    );
-  }
-  if (gameState.human > gameState.computer) {
-    alert("Human win the Game");
-  } else if (gameState.computer > gameState.human) {
-    alert("Computer win the Game");
-  } else {
-    alert("Game is Draw");
-  }
+function choose(choice) {
+  const aichoice = aiChoose();
+  displayResults([choice, aichoice]);
 }
 
-playGame();
+function aiChoose() {
+  const rand = Math.floor(Math.random() * CHOICES.length);
+  return CHOICES[rand];
+}
+
+function displayResults(results) {
+  resultDivs.forEach((resultDiv, index) => {
+    setTimeout(() => {
+      resultDiv.innerHTML = `
+      <div class="choice ${results[index].name}">
+        <img src="images/icon-${results[index].name}.svg" alt="${results[index].name}" />
+      </div>
+      `;
+    }, index * 1000);
+  });
+}
