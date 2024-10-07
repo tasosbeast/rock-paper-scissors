@@ -286,6 +286,7 @@ h6 {
   min-height: 10rem;
   background: #16213d;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .results__heading:first-of-type {
@@ -383,4 +384,9 @@ h6 {
 .show-modal {
   opacity: 1;
   pointer-events: initial;
+}
+
+/* utilities */
+.hidden {
+  display: none;
 }
