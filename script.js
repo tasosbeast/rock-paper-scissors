@@ -5,11 +5,11 @@ const modalRules = document.querySelector(".modal");
 
 // Show/hide modal
 btnRules.addEventListener("click", () =>
-  modalRules.classList.add("show-modal")
+  modalRules.classList.toggle("show-modal")
 );
 
 btnClose.addEventListener("click", () =>
-  modalRules.classList.remove("show-modal")
+  modalRules.classList.toggle("show-modal")
 );
 /**
  *
