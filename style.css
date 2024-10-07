@@ -260,6 +260,48 @@ h6 {
   margin-top: 2rem;
 }
 
+/* Results */
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "you-title ai-title"
+    "you-picked ai-picked";
+  place-items: center;
+  padding-top: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.results__heading {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  text-transform: uppercase;
+  padding: 4rem 0 8rem;
+}
+
+.results__result {
+  min-width: 10rem;
+  min-height: 10rem;
+  background: #16213d;
+  border-radius: 50%;
+}
+
+.results__heading:first-of-type {
+  grid-area: you-title;
+}
+.results__heading:last-of-type {
+  grid-area: ai-title;
+}
+
+.results__result:first-of-type {
+  grid-area: you-picked;
+}
+
+.results__result:last-of-type {
+  grid-area: ai-picked;
+}
 /* Rules button */
 .rules-btn {
   position: absolute;
