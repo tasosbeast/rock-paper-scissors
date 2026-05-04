@@ -14,3 +14,7 @@ function getComputerChoice() {
   }
   return computerChoice;
 }
+
+function getHumanChoice() {
+  return prompt("rock, paper or scissors?").toLowerCase();
+}
