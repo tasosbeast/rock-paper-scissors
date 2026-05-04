@@ -38,6 +38,16 @@ function playRound(human, computer) {
   }
 }
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+function playGame() {
+  for (let i = 1; i <= 5; i++) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+
+  console.log(
+    `Human score : ${humanScore} , Computer score : ${computerScore}`,
+  );
+}
+
+playGame();
