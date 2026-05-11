@@ -11,9 +11,19 @@
       <section class="game-card">
         <p class="eyebrow">Classic Hand Game</p>
         <h1>Rock Paper Scissors</h1>
-        <p class="intro">
-          Pick your move. We will wire the game logic into these controls next.
-        </p>
+
+        <div class="results-panel" id="results">Make your move to start.</div>
+
+        <div class="score-panel" aria-label="Current score">
+          <div class="score-card">
+            <span class="score-name">You</span>
+            <span class="score-value" id="human-score">0</span>
+          </div>
+          <div class="score-card">
+            <span class="score-name">Computer</span>
+            <span class="score-value" id="computer-score">0</span>
+          </div>
+        </div>
 
         <div class="choice-grid" aria-label="Choose your move">
           <button class="choice-button" type="button" data-choice="rock">
@@ -29,6 +39,10 @@
             <span class="choice-label">Fast and sharp</span>
           </button>
         </div>
+
+        <button class="restart-button" id="restart-button" type="button">
+          Start New Game
+        </button>
       </section>
     </main>
     <script src="./script.js"></script>
