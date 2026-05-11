@@ -9,8 +9,21 @@
   <body>
     <main class="game-shell">
       <section class="game-card">
-        <p class="eyebrow">Classic Hand Game</p>
-        <h1>Rock Paper Scissors</h1>
+        <div class="title-row">
+          <p class="eyebrow">Arcade Match</p>
+          <p class="rule-pill">First to 5 wins</p>
+        </div>
+
+        <h1>
+          <span class="title-accent">Rock</span>
+          <span class="title-accent">Paper</span>
+          <span class="title-accent">Scissors</span>
+        </h1>
+
+        <p class="intro">
+          Pick a move, race to five, and reset for another round whenever you
+          want.
+        </p>
 
         <div class="results-panel" id="results">Make your move to start.</div>
 
@@ -25,23 +38,48 @@
           </div>
         </div>
 
+        <section class="computer-stage" aria-label="Computer choice preview">
+          <div class="stage-header">
+            <p class="stage-title">Computer Pick</p>
+            <div class="stage-status" id="computer-status">
+              <span class="status-cursor" aria-hidden="true"></span>
+              <span class="status-text">Waiting for your move</span>
+            </div>
+          </div>
+
+          <div class="computer-choice-track" id="computer-track">
+            <div class="computer-choice" data-computer-choice="rock">Rock</div>
+            <div class="computer-choice" data-computer-choice="paper">
+              Paper
+            </div>
+            <div class="computer-choice" data-computer-choice="scissors">
+              Scissors
+            </div>
+          </div>
+        </section>
+
         <div class="choice-grid" aria-label="Choose your move">
           <button class="choice-button" type="button" data-choice="rock">
+            <span class="choice-tag">Power Move</span>
             <span class="choice-icon">Rock</span>
-            <span class="choice-label">Solid and stubborn</span>
+            <span class="choice-label">Heavy, steady, and hard to crack.</span>
           </button>
           <button class="choice-button" type="button" data-choice="paper">
+            <span class="choice-tag">Smart Play</span>
             <span class="choice-icon">Paper</span>
-            <span class="choice-label">Clever and precise</span>
+            <span class="choice-label">Clean, quick, and always sneaky.</span>
           </button>
           <button class="choice-button" type="button" data-choice="scissors">
+            <span class="choice-tag">Speed Cut</span>
             <span class="choice-icon">Scissors</span>
-            <span class="choice-label">Fast and sharp</span>
+            <span class="choice-label"
+              >Sharp pressure with fast reactions.</span
+            >
           </button>
         </div>
 
         <button class="restart-button" id="restart-button" type="button">
-          Start New Game
+          New Match
         </button>
       </section>
     </main>
