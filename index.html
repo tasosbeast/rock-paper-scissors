@@ -3,9 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <main class="game-shell">
+      <section class="game-card">
+        <p class="eyebrow">Classic Hand Game</p>
+        <h1>Rock Paper Scissors</h1>
+        <p class="intro">
+          Pick your move. We will wire the game logic into these controls next.
+        </p>
+
+        <div class="choice-grid" aria-label="Choose your move">
+          <button class="choice-button" type="button" data-choice="rock">
+            <span class="choice-icon">Rock</span>
+            <span class="choice-label">Solid and stubborn</span>
+          </button>
+          <button class="choice-button" type="button" data-choice="paper">
+            <span class="choice-icon">Paper</span>
+            <span class="choice-label">Clever and precise</span>
+          </button>
+          <button class="choice-button" type="button" data-choice="scissors">
+            <span class="choice-icon">Scissors</span>
+            <span class="choice-label">Fast and sharp</span>
+          </button>
+        </div>
+      </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>
